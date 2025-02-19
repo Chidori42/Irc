@@ -1,6 +1,7 @@
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS =	main.cpp\
-		Irc.cpp
+		Server.cpp\
+		Client.cpp
 		
 
 NAME = ircserv
@@ -11,7 +12,7 @@ RM = rm -f
 
 all: $(NAME)
 
-%.o: %.cpp  Irc.hpp
+%.o: %.cpp  Server.hpp Client.hpp
 	c++ $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJECTS)
